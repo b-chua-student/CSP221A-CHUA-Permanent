@@ -39,3 +39,6 @@ class Robot(ABC):
     @abstractmethod
     def perform_task(self) -> None:
         pass
+
+    def use_battery(self, battery_cost: int) -> None:
+        self.battery -= battery_cost
