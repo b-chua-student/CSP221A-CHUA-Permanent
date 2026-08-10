@@ -24,6 +24,11 @@ class Robot(ABC):
             raise ValueError(f"Charge must be between {self.MIN_BATTERY_VALUE} and {self.MAX_BATTERY_VALUE}, but got {charge}")
 
         self._battery = charge
+
+    @property 
+    # setting population as property was not in the instructions but population should be read-only and NOT accessible outside this class to ensure it is the source of truth for the instance count.
+    def population(self) -> int:
+        return self._population
     
     def __str__(self):
         return f"Robot: {self.name}, {self._battery}%.__battery"
