@@ -23,10 +23,7 @@ class Robot(ABC):
 
     @battery.setter
     def battery(self, charge: int) -> None:
-        if not (self.MIN_BATTERY_VALUE <= charge <= self.MAX_BATTERY_VALUE):
-            raise ValueError(f"Charge must be between {self.MIN_BATTERY_VALUE} and {self.MAX_BATTERY_VALUE}, but got {charge}")
-
-        self._battery = charge
+        self._battery = max(self.MIN_BATTERY_VALUE, min(self.MAX_BATTERY_VALUE, charge)) # clamp function
 
     @property 
     # setting population as property was not in the instructions but population should be read-only and NOT accessible outside this class to ensure it is the source of truth for the instance count.
