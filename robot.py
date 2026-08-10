@@ -6,7 +6,7 @@ class Robot(ABC):
     MAX_BATTERY_VALUE: int = 100
     MIN_BATTERY_VALUE: int = 0
 
-    _manufacturer: str = "Boston Dynamics"
+    manufacturer: str = "Boston Dynamics"
     _population: int = 0
 
     def __init__(self, name: str, battery: int = MAX_BATTERY_VALUE):
@@ -29,7 +29,7 @@ class Robot(ABC):
         return f"Robot: {self.name}, {self._battery}%.__battery"
 
     def __repr__(self):
-        return f"Robot(name={self.name},.__battery={self._battery}, manufacturer={self._manufacturer}, population={self._population})"
+        return f"Robot(name={self.name},.__battery={self._battery}, manufacturer={self.manufacturer}, population={self._population})"
 
     @abstractmethod
     def perform_task(self) -> None:
