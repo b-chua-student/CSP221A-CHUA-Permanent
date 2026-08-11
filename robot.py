@@ -41,4 +41,10 @@ class Robot(ABC):
         pass
 
     def use_battery(self, battery_cost: int) -> None:
+        if self.battery < battery_cost:
+            raise ValueError(
+                f"Failed to perform task: "
+                f"Battery must be between {self.MIN_BATTERY_VALUE} and {self.MAX_BATTERY_VALUE}, "
+                f"but got {self.battery} instead."
+
         self.battery -= battery_cost
