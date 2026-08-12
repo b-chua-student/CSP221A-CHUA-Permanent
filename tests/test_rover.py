@@ -1,5 +1,6 @@
 import unittest
 from rover import Rover
+from exceptions import InsufficientBatteryError
 
 class RoverTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -14,7 +15,7 @@ class RoverTestCase(unittest.TestCase):
         self.assertNotEqual(initial_battery_percentage, self.rover.battery)
 
     def test_insufficient_battery_usage(self) -> None:
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InsufficientBatteryError):
             self.rover.use_battery(101)
 
     def test_unique_attr(self) -> None:
