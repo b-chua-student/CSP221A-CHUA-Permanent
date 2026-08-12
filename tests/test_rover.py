@@ -1,6 +1,5 @@
 import unittest
 from rover import Rover
-from robot import Robot
 
 class RoverTestCase(unittest.TestCase):
     def setUp(self) -> None:
