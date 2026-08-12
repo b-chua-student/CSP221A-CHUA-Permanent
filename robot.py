@@ -31,10 +31,10 @@ class Robot(ABC):
         return Robot._population
     
     def __str__(self):
-        return f"Robot: {self.name}, {self._battery}%.__battery"
+        return f"Robot: {self.name}, {self._battery}% battery"
 
     def __repr__(self):
-        return f"Robot(name={self.name},.__battery={self._battery}, manufacturer={self.manufacturer}, population={self._population})"
+        return f"Robot(name={self.name}, battery={self._battery}, manufacturer={self.manufacturer}, population={self._population})"
 
     @abstractmethod
     def perform_task(self) -> None:
