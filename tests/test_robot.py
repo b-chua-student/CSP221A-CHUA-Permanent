@@ -2,18 +2,12 @@ import unittest
 from robot import Robot
 
 class DummyRobot(Robot):
-    TASK_COST = 10
-
     def perform_task(self) -> None: # perform_task() implementation should handle the battery cost 
-        self.battery -= self.TASK_COST
-        pass
+        self.use_battery(10)
 
 class MockRobot(Robot):
-    TASK_COST = 10
-
     def perform_task(self) -> None:
-        self.battery -= self.TASK_COST
-        pass
+        self.use_battery(10)
 
 class RobotTestCase(unittest.TestCase):
     def setUp(self) -> None:
