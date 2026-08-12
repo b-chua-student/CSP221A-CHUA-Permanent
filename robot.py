@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from exceptions import InsufficientBatteryError
 
 class Robot(ABC):
 
@@ -42,10 +43,6 @@ class Robot(ABC):
 
     def use_battery(self, battery_cost: int) -> None:
         if self.battery < battery_cost:
-            raise ValueError(
-                f"Failed to perform task: "
-                f"Battery must be between {self.MIN_BATTERY_VALUE} and {self.MAX_BATTERY_VALUE}, "
-                f"but got {self.battery} instead."
-            )
+            raise InsufficientBatteryError(self.name, battery_cost, self.battery)
 
         self.battery -= battery_cost

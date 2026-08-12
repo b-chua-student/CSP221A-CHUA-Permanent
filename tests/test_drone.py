@@ -1,6 +1,6 @@
 import unittest
 from drone import Drone
-from robot import Robot
+from exceptions import InsufficientBatteryError
 
 class DroneTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -15,7 +15,7 @@ class DroneTestCase(unittest.TestCase):
         self.assertNotEqual(initial_battery_percentage, self.drone.battery)
 
     def test_insufficient_battery_usage(self) -> None:
-        with self.assertRaises(ValueError):
+        with self.assertRaises(InsufficientBatteryError):
             self.drone.use_battery(101)
 
     def test_unique_attr(self) -> None:
