@@ -46,3 +46,7 @@ class Robot(ABC):
             raise InsufficientBatteryError(self.name, battery_cost, self.battery)
 
         self.battery -= battery_cost
+
+    @classmethod
+    def from_config(cls, config: dict):
+        
