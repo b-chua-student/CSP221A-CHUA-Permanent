@@ -18,3 +18,20 @@ class UtilsTestCase(unittest.TestCase):
                 str(robot), 
                 output_str.getvalue() # Return string containing content of entire buffer
             )
+    
+    def test_run_task_safely_insufficient_battery_logs_error(self) -> None:
+        drone = Drone(name="Reaper", battery=1)
+        self.assertLogs(run_task_safely(drone))
+
+    def test_run_task_safely_success(self) -> None:
+        drone = Drone(name="Reaper")
+
+        output_str = io.StringIO()
+        with redirect_stdout(output_str): # capture print output into output_str
+            run_task_safely(drone)
+
+        PERFORM_TASK_RETURN_VALUE = None
+        FINALLY_PRINT_OUTPUT = f"{drone.name} at {drone.battery}% battery."
+
+        self.assertIn(str(PERFORM_TASK_RETURN_VALUE), output_str.getvalue())
+        self.assertIn(FINALLY_PRINT_OUTPUT, output_str.getvalue())
