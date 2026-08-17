@@ -1,6 +1,10 @@
 import unittest
 from rover import Rover
 from exceptions import InsufficientBatteryError
+from logger import *
+
+ensure_log_directories("logs/tests/")
+configure_logging("logs/tests/test_rover.logs", "rover")
 
 class RoverTestCase(unittest.TestCase):
     def setUp(self) -> None:
