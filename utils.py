@@ -1,5 +1,5 @@
-from robot import Robot
-from drone import Drone
+from src.robot import Robot
+from src.drone import Drone
 from exceptions import InsufficientBatteryError
 import logging
 

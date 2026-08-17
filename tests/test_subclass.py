@@ -1,7 +1,7 @@
 import unittest
 import inspect
-from rover import Rover
-from drone import Drone
+from src.rover import Rover
+from src.drone import Drone
 
 class RobotSubclassTestCase(unittest.TestCase):
     def setUp(self) -> None:

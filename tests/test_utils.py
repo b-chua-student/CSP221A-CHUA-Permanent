@@ -2,8 +2,8 @@ import unittest
 import io
 from contextlib import redirect_stdout 
 from utils import *
-from drone import Drone
-from rover import Rover
+from src.drone import Drone
+from src.rover import Rover
 
 class UtilsTestCase(unittest.TestCase):
     def test_fleet_report(self) -> None:

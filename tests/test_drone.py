@@ -1,5 +1,5 @@
 import unittest
-from drone import Drone
+from src.drone import Drone
 from exceptions import InsufficientBatteryError
 
 class DroneTestCase(unittest.TestCase):

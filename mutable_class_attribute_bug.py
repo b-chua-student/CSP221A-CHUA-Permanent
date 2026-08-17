@@ -1,4 +1,4 @@
-from robot import Robot
+from src.robot import Robot
 
 class ClassAttrRobot(Robot):
     robot_type: list[str] = []

@@ -1,5 +1,5 @@
 import unittest
-from rover import Rover
+from src.rover import Rover
 from exceptions import InsufficientBatteryError
 from logger import *
 
