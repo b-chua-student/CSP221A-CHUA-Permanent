@@ -20,9 +20,10 @@ def configure_logging(filename: str, logger_name: str | None = None, level: int 
     logger.setLevel(level)
     logger.propagate = False # avoid duplicate logs to root logger
 
-    handler = logging.FileHandler(filename, mode="w")
-    handler.setFormatter(logging.Formatter(fmt))
-    logger.addHandler(handler)
+    if not logger.handlers: # add handler if it doesnt exist
+        handler = logging.FileHandler(filename, mode="w")
+        handler.setFormatter(logging.Formatter(fmt))
+        logger.addHandler(handler)
 
     return logger
 
