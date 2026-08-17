@@ -1,4 +1,4 @@
-from robot import Robot 
+from src.robot import Robot 
 from logger import log_action
 
 class Rover(Robot):
