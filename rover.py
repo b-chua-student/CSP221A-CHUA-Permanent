@@ -1,4 +1,5 @@
 from robot import Robot 
+from logger import log_action
 
 class Rover(Robot):
 
@@ -9,6 +10,7 @@ class Rover(Robot):
         self.z = z
         self.max_speed = max_speed
 
+    @log_action
     def perform_task(self) -> None:
         print("Testing all motors...")
         self.use_battery(3)
