@@ -24,3 +24,6 @@ class RoverTestCase(unittest.TestCase):
 
     def test_unique_attr(self) -> None:
         self.assertTrue(hasattr(self.rover, "max_speed"))
+
+    def test_wrapped_method_preserved(self) -> None:
+        self.assertEqual(self.rover.perform_task.__name__, "perform_task")
