@@ -52,7 +52,7 @@ class Student:
             self.scores.append(score)
 
     def average(self):
-        return np.mean(self.scores)
+        return self.scores.mean()
 
     def __str__():
         pass
