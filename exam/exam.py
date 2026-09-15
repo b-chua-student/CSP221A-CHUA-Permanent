@@ -65,3 +65,11 @@ class InvalidScoreError(Exception):
 
 class StudentRecordLockedError(Exception):
     pass
+
+def run():
+    students = []
+
+    for student in students:
+        print(student)
+
+    print(students)
