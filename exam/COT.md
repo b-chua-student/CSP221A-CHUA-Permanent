@@ -8,3 +8,5 @@
 #   - create .average() method that returns np.mean of every Student @classmethod
 #   - create .lock() method that ensures records are locked @classmethod
 #   - create .add_score() method that fails when records are lcoked
+
+stuck converting raw_rows into 

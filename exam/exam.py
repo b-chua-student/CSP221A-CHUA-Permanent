@@ -39,7 +39,7 @@ print(cleaned_data)
 class Student:
     def __init__(self, name, is_locked: bool = False):
         self.name = name
-        self.scores = []
+        self.scores = np.array([])
 
     def lock(self):
         self.is_locked = True
