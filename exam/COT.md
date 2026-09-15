@@ -9,4 +9,4 @@
 #   - create .lock() method that ensures records are locked @classmethod
 #   - create .add_score() method that fails when records are lcoked
 
-stuck converting raw_rows into 
+paano i convert to list ang string man
